@@ -42,8 +42,14 @@ class Funcionario
      */
     private $dataCadastro;
     
+    /**
+     * @ORM\ManyToOne(targetEntity="Servico")
+     * @ORM\JoinColumn(name="servico_id", referencedColumnName="id")
+     */
+    private $servico;
     
-
+    
+    
     /**
      * Get id
      *
@@ -172,5 +178,29 @@ class Funcionario
     public function getDataCadastro()
     {
         return $this->dataCadastro;
+    }
+
+    /**
+     * Set servico
+     *
+     * @param \AppBundle\Entity\Servico $servico
+     *
+     * @return Funcionario
+     */
+    public function setServico(\AppBundle\Entity\Servico $servico = null)
+    {
+        $this->servico = $servico;
+
+        return $this;
+    }
+
+    /**
+     * Get servico
+     *
+     * @return \AppBundle\Entity\Servico
+     */
+    public function getServico()
+    {
+        return $this->servico;
     }
 }

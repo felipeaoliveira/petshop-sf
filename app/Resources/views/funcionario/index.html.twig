@@ -21,9 +21,9 @@
                 <td><a href="{{ path('funcionario_show', { 'id': funcionario.id }) }}">{{ funcionario.id }}</a></td>
                 <td>{{ funcionario.nome }}</td>
                 <td>{{ funcionario.email }}</td>
-                <td>{{ funcionario.cargo }}</td>
-                <td>{% if funcionario.ativo %}Yes{% else %}No{% endif %}</td>
-                <td>{% if funcionario.dataCadastro %}{{ funcionario.dataCadastro|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ funcionario.cargo|upper }}</td>
+                <td>{% if funcionario.ativo %}Sim{% else %}Não{% endif %}</td>
+                <td>{% if funcionario.dataCadastro %}{{ funcionario.dataCadastro|date('d/m/Y H:i:s') }}{% endif %}</td>
                 <td>
                     <a href="{{ path('funcionario_show', { 'id': funcionario.id }) }}"class="btn btn-info">Mostrar</a>
                     <a href="{{ path('funcionario_edit', { 'id': funcionario.id }) }}"class="btn btn-warning">Editar</a>

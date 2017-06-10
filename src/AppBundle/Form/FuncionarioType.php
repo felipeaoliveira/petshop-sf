@@ -21,7 +21,8 @@ class FuncionarioType extends AbstractType
                     "Medico"=> "medico",
                     "Tosador" => "tosador",
                     "Atendente" => "atendente")))
-                ->add('ativo');
+                ->add('ativo')
+                ->add('servico');
                 //->add('dataCadastro');
     }
     
