@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <h1>Listagem de Serviços</h1>
+    <a href="{{ path('servico_new') }}" class="btn btn-primary">Cadastrar novo Serviço</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for servico in servicos %}
+            <tr>
+                <td><a href="{{ path('servico_show', { 'id': servico.id }) }}">{{ servico.id }}</a></td>
+                <td>{{ servico.nome }}</td>
+                <td>{{ servico.descricao }}</td>
+                <td>{{ servico.preco }}</td>
+                <td>
+                    <a href="{{ path('servico_show', { 'id': servico.id }) }}" class="btn btn-info">Mostrar</a>
+                    <a href="{{ path('servico_edit', { 'id': servico.id }) }}" class="btn btn-warning">Editar</a>
+                    
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   
+    
+{% endblock %}
